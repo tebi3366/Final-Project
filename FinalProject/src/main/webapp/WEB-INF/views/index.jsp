@@ -51,6 +51,7 @@
 	아래 div안에 작성해주세요 -->
 	<div id="이상훈">
 		<li><a href="review/list.do">리뷰 페이지 가기</a></li>
+		<a href="buyer/mypage.do">구매자 페이지</a>
 	</div>
 	<div id="홍덕환">
 		<a href="">ip등록</a>

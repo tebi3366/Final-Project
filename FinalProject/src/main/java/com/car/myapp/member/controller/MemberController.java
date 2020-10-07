@@ -193,5 +193,15 @@ public class MemberController {
 	public Map<String,Object> checkPhone(String user_phone){
 		return memberService.checkPhone(user_phone);
 	}
+	
+	//마이페이지
+	
+	//개인정보 보기 요청 처리
+	@RequestMapping("/buyer/mypage")
+	public ModelAndView info(HttpServletRequest request,ModelAndView mView) {
+		memberService.getInfo(request.getSession(), mView);
+		mView.setViewName("buyer/mypage");
+		return mView;
+	}
 
 }
