@@ -225,10 +225,29 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void getInfo(HttpSession session, ModelAndView mView) {
 		//로그인된 아이디를 session 객체를 이용해서 얻어온다. 
-		String user_id=(String)session.getAttribute("user_id");
+		String id=(String)session.getAttribute("id");
 		//dao 를 이용해서 사용자 정보를 얻어와서 
-		MemberDto dto=memberDao.getUserInfo(user_id);
+		MemberDto dto=memberDao.getUserInfo(id);
 		//mView 객체에 담아준다. 
 		mView.addObject("dto", dto);
+	}
+	@Override
+	public void deleteUser(HttpSession session) {
+		//세션에 저장된 아이디를 읽어와서 
+		String id=(String)session.getAttribute("id");
+		//삭제
+		memberDao.delete(id);
+		//로그 아웃 처리 
+		session.invalidate();
+		
+	}
+	@Override
+	public void updateUser(HttpSession session, MemberDto dto) {
+		//로그인된 아이디를 읽어와서 
+		String id=(String)session.getAttribute("id");
+		//MemberDto 에 담고 
+		dto.setUser_id(id);
+		//dao 를 이용해서 수정반영하기 
+		memberDao.update(dto);		
 	}
 }

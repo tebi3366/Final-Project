@@ -203,5 +203,35 @@ public class MemberController {
 		mView.setViewName("buyer/mypage");
 		return mView;
 	}
+	//회원 탈퇴
+	@RequestMapping("/buyer/private/delete")
+	public ModelAndView delete(HttpServletRequest request,
+			ModelAndView mView) {
+		//서비스를 이용해서 사용자 정보를 삭제하고
+		memberService.deleteUser(request.getSession());
+		//view 페이지로 forward 이동해서 응답
+		mView.setViewName("buyer/private/delete");
+		return mView;
+	}
+	//회원정보 수정폼 요청 처리 
+	@RequestMapping("/buyer/private/updateform")
+	public ModelAndView updateForm(HttpServletRequest request,
+			ModelAndView mView) {
+		memberService.getInfo(request.getSession(), mView);
+		mView.setViewName("buyer/private/updateform");
+		return mView;
+	}
+	//개인 정보 수정 반영 요청 처리
+	@RequestMapping("/buyer/private/update")
+	public ModelAndView update(HttpServletRequest request, 
+			MemberDto dto, ModelAndView mView) {
+		//service 객체를 이용해서 개인정보를 수정한다.
+		memberService.updateUser(request.getSession(), dto);
+		//개인 정보 보기 페이지로 리다일렉트 이동한다.
+		mView.setViewName("redirect:/buyer/mypage.do");
+		return mView;
+	}
+
+
 
 }

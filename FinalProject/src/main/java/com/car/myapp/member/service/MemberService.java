@@ -24,5 +24,8 @@ public interface MemberService {
 	
 	//마이페이지
 	public void getInfo(HttpSession session, ModelAndView mView);
+	public void deleteUser(HttpSession session);
+	public void updateUser(HttpSession session, MemberDto dto);
+
 
 }

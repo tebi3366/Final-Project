@@ -8,6 +8,8 @@ public class MemberDto {
 	private String user_addr;
 	private String user_p_code;
 	private boolean user_sort;
+
+
 	
 	public MemberDto() {}
 
@@ -77,5 +79,8 @@ public class MemberDto {
 
 	public void setUser_sort(boolean user_sort) {
 		this.user_sort = user_sort;
-	};
+	}
+
+
+	
 }

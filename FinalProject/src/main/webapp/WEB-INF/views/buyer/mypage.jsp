@@ -2,18 +2,49 @@
     pageEncoding="UTF-8"%> 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    	
 <!DOCTYPE html>
-<html data-ng-app="mypageApp">
+<html>
 <head>
 <meta charset="UTF-8">
-<title></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="../resources/js/angular.min.js"></script>
-<script>
+<title>buyer/mypage.jsp</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 
-</script>
 </head>
 <body>
-	<strong>{{user_id}}</strong> 님 로그인중... 
+<div class="container">
+	<h1>구매자 마이페이지</h1>
+	<table>
+		<tr>
+			<th>아이디</th>
+			<td>${dto.user_id }</td>
+		</tr>
+		<tr>
+			<th>이름</th>
+			<td>${dto.user_name }</td>
+		</tr>
+		<tr>
+			<th>폰번호</th>
+			<td>${dto.user_phone}</td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td>${dto.user_addr }</td>
+		</tr>
+		<tr>
+			<th>우편번호</th>
+			<td>${dto.user_p_code }</td>
+		</tr>
+	</table>
+	<a href="private/updateform.do">개인정보 수정</a>
+	<a href="javascript:deleteConfirm()">탈퇴</a>
+</div>
+<script>
+ 	function deleteConfirm(){
+		var isDelete=confirm("${user_id} 회원님 탈퇴 하시겠습니까?");
+		if(isDelete){
+			location.href="${pageContext.request.contextPath }/buyer/private/delete.do?id=${user_id}";
+		}
+	}
+</script>
 </body>
 </html>
 
