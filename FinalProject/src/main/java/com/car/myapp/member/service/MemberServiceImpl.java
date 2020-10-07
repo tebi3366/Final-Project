@@ -219,4 +219,16 @@ public class MemberServiceImpl implements MemberService {
 		map.put("isExist",isExist);
 		return map;
 	}
+	
+	//마이페이지
+	
+	@Override
+	public void getInfo(HttpSession session, ModelAndView mView) {
+		//로그인된 아이디를 session 객체를 이용해서 얻어온다. 
+		String user_id=(String)session.getAttribute("user_id");
+		//dao 를 이용해서 사용자 정보를 얻어와서 
+		MemberDto dto=memberDao.getUserInfo(user_id);
+		//mView 객체에 담아준다. 
+		mView.addObject("dto", dto);
+	}
 }
