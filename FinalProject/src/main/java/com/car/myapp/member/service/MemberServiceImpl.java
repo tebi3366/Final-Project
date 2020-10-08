@@ -298,9 +298,6 @@ public class MemberServiceImpl implements MemberService {
 		//dao 를 이용해서 사용자 정보를 얻어와서 
 		MemberDto dto=memberDao.getUserInfo(id);
 		//mView 객체에 담아준다. 
-		MemberDto dto2=new MemberDto();
-		
-		
 		mView.addObject("dto", dto);
 	}
 	@Override

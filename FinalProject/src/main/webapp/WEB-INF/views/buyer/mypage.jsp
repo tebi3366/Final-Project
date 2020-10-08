@@ -11,7 +11,6 @@
 </head>
 <body>
 <div class="container">
-	<c:if test="${dto.user_sort eq 0 }">
 	<h1>구매자 마이페이지</h1>
 	<table>
 		<tr>
@@ -37,7 +36,6 @@
 	</table>
 	<a href="private/updateform.do">개인정보 수정</a>
 	<a href="javascript:deleteConfirm()">탈퇴</a>
-	</c:if>
 </div>
 <script>
  	function deleteConfirm(){
