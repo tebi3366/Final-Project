@@ -22,4 +22,12 @@ public interface MemberService {
 	public Map<String,Object> changePwd(MemberDto dto);
 	public Map<String,Object> checkPhone(String user_phone);
 	public Map<String, Object> sendMail(String user_mail);
+
+	
+	//마이페이지
+	public void getInfo(HttpSession session, ModelAndView mView);
+	public void deleteUser(HttpSession session);
+	public void updateUser(HttpSession session, MemberDto dto);
+
+
 }

@@ -108,4 +108,20 @@ public class MemberDaoImpl implements MemberDao {
 			return false;			
 		}
 	}
+	
+	//구매자마이페이지 
+	
+	//회원탈퇴
+	@Override
+	public void delete(String user_id) {
+		session.delete("member.delete", user_id);
+		
+	}
+	//회원정보 수정
+	@Override
+	public void update(MemberDto dto) {
+		session.update("member.update", dto);
+		
+	}
+
 }

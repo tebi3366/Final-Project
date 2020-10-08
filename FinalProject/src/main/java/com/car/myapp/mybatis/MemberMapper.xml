@@ -53,4 +53,18 @@
 	<select id="checkPhone" parameterType="string" resultType="string">
 		SELECT user_phone FROM user_all WHERE user_phone=#{user_phone}
 	</select>
+	
+	<!-- 마이페이지 -->
+	<delete id="delete" parameterType="string">
+		DELETE FROM user_all
+		WHERE user_id=#{user_id}
+	</delete>
+		<update id="update" parameterType="memberDto">
+		UPDATE user_all
+		SET user_name=#{user_name},
+			user_phone=#{user_phone},
+			user_addr=#{user_addr, jdbcType=VARCHAR},
+			user_p_code=#{user_p_code, jdbcType=VARCHAR}
+		WHERE user_id=#{user_id}
+	</update>
 </mapper>

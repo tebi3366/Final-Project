@@ -17,4 +17,9 @@ public interface MemberDao {
 	public MemberDto getUserInfo(String user_id);
 	public boolean changePwd(MemberDto dto);
 	public boolean checkPhone(String user_phone);
+	
+	//마이페이지
+	public void delete(String user_id);
+	public void update(MemberDto dto);
+
 }
