@@ -17,19 +17,19 @@
 <div class="container">
 	<h1>글 수정 양식 입니다.</h1>
 	<form action="update.do" method="post">
-		<input type="hidden" name="num" value="${dto.num }"/>
+		<input type="hidden" name="sr_num" value="${dto.sr_num }"/>
 		<div class="form-group">
 			<label for="num">글번호</label>
-			<input class="form-control" type="text" id="num" value="${dto.num }" disabled/>
+			<input class="form-control" type="text" id="num" value="${dto.sr_num }" disabled/>
 		</div>
 		<div class="form-group">
 			<label for="title">제목</label>
-			<input class="form-control" type="text" id="title" name="title" 
-				value="${dto.title }"/>
+			<input class="form-control" type="text" id="title" name="sr_title" 
+				value="${dto.sr_title }"/>
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea class="form-control" name="content" id="content">${dto.content }</textarea>
+			<textarea class="form-control" name="sr_content" id="content">${dto.sr_content }</textarea>
 		</div>
 		<button class="btn btn-outline-primary" type="submit" onclick="submitContents(this);">수정확인</button>
 		<button class="btn btn-outline-warning" type="reset">취소</button>

@@ -25,11 +25,11 @@
 		</div>
 		<div class="form-group">
 			<label for="title">제목</label>
-			<input class="form-control" type="text" name="title" id="title"/>
+			<input class="form-control" type="text" name="sr_title" id="title"/>
 		</div>
 		<div class="form-group">
 			<label for="content">내용</label>
-			<textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+			<textarea class="form-control" name="sr_content" id="content" cols="30" rows="10"></textarea>
 		</div>
 		<button class="btn btn-outline-primary" type="submit" onclick="submitContents(this);">저장</button>
 		<button class="btn btn-outline-warning" type="reset">취소</button>
@@ -50,7 +50,7 @@
 	      폼 안에 있는 버튼에서 실행되면 된다.
  --%>
 <!-- SmartEditor 에서 필요한 javascript 로딩  -->
-<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+<script src="${pageContext.request.contextPath }/resources/SmartEditor/js/HuskyEZCreator.js"></script>
 <script>
 	var oEditors = [];
 	
@@ -60,7 +60,7 @@
 	nhn.husky.EZCreator.createInIFrame({
 		oAppRef: oEditors,
 		elPlaceHolder: "content",
-		sSkinURI: "${pageContext.request.contextPath}/SmartEditor/SmartEditor2Skin.html",	
+		sSkinURI: "${pageContext.request.contextPath}/resources/SmartEditor/SmartEditor2Skin.html",	
 		htParams : {
 			bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 			bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)

@@ -25,9 +25,9 @@
 		<tbody>
 		<c:forEach var="tmp" items="${list }">
 			<tr>
-				<td>${tmp.num }</td>
-				<td>${tmp.writer }</td>
-				<td><a href="detail.do?num=${tmp.num }&condition=${condition }&keyword=${encodedK }">${tmp.title }</a></td>
+				<td>${tmp.sr_num }</td>
+				<td>${tmp.user_id }</td>
+				<td><a href="detail.do?num=${tmp.sr_num }&condition=${condition }&keyword=${encodedK }">${tmp.sr_title }</a></td>
 				<td>${tmp.viewCount }</td>
 				<td>${tmp.regdate }</td>
 			</tr>
@@ -59,15 +59,12 @@
 		<label for="condition">검색조건</label>
 		<select name="condition" id="condition">
 			<option value="title_content" <c:if test="${condition eq 'title_content' }">selected</c:if>>제목+내용</option>
-			<option value="title" <c:if test="${condition eq 'title' }">selected</c:if>>제목</option>
-			<option value="writer" <c:if test="${condition eq 'writer' }">selected</c:if>>작성자</option>
+			<option value="sr_title" <c:if test="${condition eq 'sr_title' }">selected</c:if>>제목</option>
+			<option value="user_id" <c:if test="${condition eq 'user_id' }">selected</c:if>>작성자</option>
 		</select>
 		<input value="${keyword }" type="text" name="keyword" placeholder="검색어..."/>
 		<button type="submit">검색</button>
 	</form>
-<c:if test="${row.cnt > 0}"> //댓글의 개수가 0보다 크면 실행되는 구문
-    <span style="color:red;">( ${row.cnt} )</span> //댓글의 개수를 출력하고 색깔을 빨간색으로 한다.
-</c:if>   
 
 </div>
 </body>

@@ -9,8 +9,8 @@
 </head>
 <body>
 <script>
-	alert("${id} 님이 작성한 글을 저장했습니다.");
-	location.href="${pageContext.request.contextPath }/cafe/list.do";
+	alert("${user_id} 님이 작성한 글을 저장했습니다.");
+	location.href="${pageContext.request.contextPath }/review/list.do";
 </script>
 </body>
 </html>

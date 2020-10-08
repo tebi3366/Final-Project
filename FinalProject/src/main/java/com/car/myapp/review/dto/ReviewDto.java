@@ -1,46 +1,42 @@
 package com.car.myapp.review.dto;
 
 public class ReviewDto {
-	private int num;
-	private String writer;
-	private String title;
-	private String content;
+	private int sr_num;
+	private String user_id;
+	private String sr_title;
+	private String sr_content;
 	private int viewCount;
-	private String regdate;
+	private String sr_regdate;
 	private int startRowNum;
 	private int endRowNum;
-	private int prevNum; //�������� �۹�ȣ
-	private int nextNum; //�������� �۹�ȣ
-    private int recnt;            // **게시글 댓글의 수 추가
-
-
-	
-	public void setRecnt(int recnt) {
-		this.recnt = recnt;
+	private int prevNum; 
+	private int nextNum; 
+    private int recnt;
+    
+    
+	public int getSr_num() {
+		return sr_num;
 	}
-	public int getNum() {
-		return num;
+	public void setSr_num(int sr_num) {
+		this.sr_num = sr_num;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public String getUser_id() {
+		return user_id;
 	}
-	public String getWriter() {
-		return writer;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public String getSr_title() {
+		return sr_title;
 	}
-	public String getTitle() {
-		return title;
+	public void setSr_title(String sr_title) {
+		this.sr_title = sr_title;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public String getSr_content() {
+		return sr_content;
 	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setSr_content(String sr_content) {
+		this.sr_content = sr_content;
 	}
 	public int getViewCount() {
 		return viewCount;
@@ -48,11 +44,11 @@ public class ReviewDto {
 	public void setViewCount(int viewCount) {
 		this.viewCount = viewCount;
 	}
-	public String getRegdate() {
-		return regdate;
+	public String getSr_regdate() {
+		return sr_regdate;
 	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setSr_regdate(String sr_regdate) {
+		this.sr_regdate = sr_regdate;
 	}
 	public int getStartRowNum() {
 		return startRowNum;
@@ -81,5 +77,12 @@ public class ReviewDto {
 	public int getRecnt() {
 		return recnt;
 	}
+	public void setRecnt(int recnt) {
+		this.recnt = recnt;
+	}     
+ 
+
+	
+
 	
 }

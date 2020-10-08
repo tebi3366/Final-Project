@@ -12,13 +12,13 @@ public interface ReviewDao {
 	//글 추가
 	public void insert(ReviewDto dto);
 	//글정보 얻어오기
-	public ReviewDto getData(int num);
+	public ReviewDto getData(int sr_num);
 	//키워드를 활용한 글정보 얻어오기
 	public ReviewDto getData(ReviewDto dto);
 	//조회수 증가 시키기
-	public void addViewCount(int num);
+	public void addViewCount(int sr_num);
 	//글 삭제
-	public void delete(int num);
+	public void delete(int sr_num);
 	//글 수정
 	public void update(ReviewDto dto);
 }

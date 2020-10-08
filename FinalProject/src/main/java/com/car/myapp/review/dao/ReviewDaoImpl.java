@@ -31,25 +31,25 @@ public class ReviewDaoImpl implements ReviewDao{
 	}
 
 	@Override
-	public ReviewDto getData(int num) {
-		return session.selectOne("review.getData", num);
+	public ReviewDto getData(int sr_num) {
+		return session.selectOne("review.getData", sr_num);
 	}
 
 	@Override
-	public void addViewCount(int num) {
-		session.update("review.addViewCount", num);
+	public void addViewCount(int sr_num) {
+		session.update("review.addViewCount", sr_num);
 	}
 
 	@Override
-	public void delete(int num) {
-		session.delete("review.delete", num);
+	public void delete(int sr_num) {
+		session.delete("review.delete", sr_num);
 	}
 
 	@Override
 	public void update(ReviewDto dto) {
 		session.update("review.update", dto);
 	}
-	//Å°¿öµå°¡ µé¾îÀÖ´Â ReviewDto ¸¦ Àü´Þ¹Þ¾Æ¼­ ±Û Á¤º¸¸¦ ¸®ÅÏÇÏ´Â ¸Þ¼Òµå 
+	//Å°ï¿½ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ReviewDto ï¿½ï¿½ ï¿½ï¿½ï¿½Þ¹Þ¾Æ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½ 
 	@Override
 	public ReviewDto getData(ReviewDto dto) {
 		
